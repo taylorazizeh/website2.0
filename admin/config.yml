@@ -1,1 +1,6 @@
-
+backend:
+  name: github
+  repo: taylorazizeh/website2.0
+  branch: main
+  base_url: https://taylor-decap-auth.taylorazizeh.workers.dev
+  auth_endpoint: /auth
