@@ -136,7 +136,7 @@ p {
   align-items: center;
   background:
     linear-gradient(rgba(8, 31, 38, 0.12), rgba(8, 31, 38, 0.18)),
-    url("/images/hero.jpg") center center / cover no-repeat;
+    url("/images/hero.jpeg") center center / cover no-repeat;
 }
 
 .hero-overlay {
@@ -282,11 +282,11 @@ p {
 }
 
 .card-image-whale {
-  background-image: url("/images/gray-whale.jpg");
+  background-image: url("/images/gray-whale.jpeg");
 }
 
 .card-image-penguin {
-  background-image: url("/images/emperor-penguin.jpg");
+  background-image: url("/images/emperor-penguin.JPG");
 }
 
 .card-content {
