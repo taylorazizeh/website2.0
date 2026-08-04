@@ -1284,3 +1284,27 @@ p {
 .publications-page {
   background: var(--color-cream);
 }
+
+/* Match spacing on other content pages */
+.publications-page {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.publications-page .page-intro {
+  margin-bottom: 3rem;
+}
+
+
+/* Publications-specific layout */
+.publications-list{
+    margin-top:3rem;
+}
+
+.publication-entry{
+    margin-bottom:4rem;
+}
+
+.publication-entry:last-child{
+    margin-bottom:0;
+}

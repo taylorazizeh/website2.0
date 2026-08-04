@@ -3,9 +3,28 @@
 {{ end }}
 
 {{ define "main" }}
-  <section class="publications-page">
-    <div class="section-container">
-      <div class="page-intro">
+  <section class="content-page">
+    <div class="section-container content-page-container content-width-wide">
+
+      <p class="section-label">Research outputs</p>
+
+      <h1 class="title-size-medium">
+        {{ .Title }}
+      </h1>
+
+      {{ with .Params.description }}
+        <p class="content-page-description">
+          {{ . }}
+        </p>
+      {{ end }}
+
+      {{ with .Content }}
+        <div class="content-page-body">
+          {{ . }}
+        </div>
+      {{ end }}
+
+      <div class="publications-list">
         <p class="section-label">Research outputs</p>
         <h1>Publications</h1>
 
@@ -14,9 +33,7 @@
             {{ . }}
           </div>
         {{ end }}
-      </div>
 
-      <div class="publications-list">
         {{ range sort .RegularPages ".Params.year" "desc" }}
           <article class="publication-entry">
             <p class="publication-year">
