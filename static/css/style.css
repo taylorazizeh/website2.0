@@ -1279,3 +1279,8 @@ p {
   color: #ffffff;
 }
 
+
+/* Match Publications page background to other interior pages */
+.publications-page {
+  background: var(--color-cream);
+}
