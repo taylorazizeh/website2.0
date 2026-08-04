@@ -5,7 +5,7 @@ description: I'm Taylor Azizeh, a current Ph.D. Fellow at Oregon State
 image: /images/uploads/csumb_headshot_nov2023.jpg
 title_size: medium
 image_size: medium
-image_alignment: left
+image_alignment: center
 content_width: normal
 text_alignment: center
 after_images:
