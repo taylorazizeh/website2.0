@@ -883,3 +883,29 @@ p {
   display: block;
   margin: 0 0 2rem auto;
 }
+
+/* Preserve original image proportions */
+.content-page-image,
+.photography-item img,
+.research-page-image {
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+/* Keep Decap-controlled widths without cropping */
+.content-page-image.image-size-small {
+  width: min(100%, 420px);
+}
+
+.content-page-image.image-size-medium {
+  width: min(100%, 620px);
+}
+
+.content-page-image.image-size-large {
+  width: min(100%, 820px);
+}
+
+.content-page-image.image-size-full {
+  width: 100%;
+}
