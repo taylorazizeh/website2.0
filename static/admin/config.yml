@@ -153,6 +153,33 @@ collections:
 
           - { label: "Page content", name: "body", widget: "markdown" }
 
+      - name: "research_landing"
+        label: "Research Landing Page"
+        file: "content/research/_index.md"
+        fields:
+          - label: "Page title"
+            name: "title"
+            widget: "string"
+
+          - label: "Page description"
+            name: "description"
+            widget: "text"
+
+          - label: "Introductory image"
+            name: "image"
+            widget: "image"
+            required: false
+
+          - label: "Page content"
+            name: "body"
+            widget: "markdown"
+            required: false
+
+          - label: "Draft"
+            name: "draft"
+            widget: "hidden"
+            default: false
+
       - name: "contact"
         label: "Contact Page"
         file: "content/contact.md"
@@ -328,11 +355,15 @@ collections:
     slug: "{{slug}}"
     summary: "{{title}}"
     filter:
-      field: "title"
-      value: "Research"
-      complement: true
+      field: "content_type"
+      value: "research_project"
 
     fields:
+      - label: "Content type"
+        name: "content_type"
+        widget: "hidden"
+        default: "research_project"
+
       - label: "Project title"
         name: "title"
         widget: "string"

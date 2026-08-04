@@ -178,3 +178,92 @@ CMS.registerPreviewTemplate("about", StandardPagePreview);
 CMS.registerPreviewTemplate("contact", StandardPagePreview);
 CMS.registerPreviewTemplate("photography", PhotographyPreview);
 CMS.registerPreviewTemplate("research", StandardPagePreview);
+
+var ResearchLandingPreview = createClass({
+  render: function () {
+    var entry = this.props.entry;
+    var image = entry.getIn(["data", "image"]);
+    var imageAsset = image ? this.props.getAsset(image) : null;
+
+    return h(
+      "main",
+      { className: "content-page" },
+      h(
+        "div",
+        {
+          className:
+            "section-container content-page-container content-width-wide"
+        },
+
+        h("p", { className: "section-label" }, "Research"),
+
+        h(
+          "h1",
+          { className: "title-size-medium" },
+          entry.getIn(["data", "title"]) || "Research"
+        ),
+
+        h(
+          "p",
+          { className: "content-page-description" },
+          entry.getIn(["data", "description"]) || ""
+        ),
+
+        imageAsset
+          ? h("img", {
+              className:
+                "content-page-image image-size-large image-align-center",
+              src: imageAsset.toString(),
+              alt: entry.getIn(["data", "title"]) || "Research"
+            })
+          : null,
+
+        h(
+          "div",
+          { className: "content-page-body" },
+          this.props.widgetFor("body")
+        ),
+
+        h(
+          "div",
+          { className: "card-grid research-page-grid" },
+
+          h(
+            "article",
+            { className: "research-card" },
+            h(
+              "div",
+              { className: "card-content" },
+              h("h2", {}, "Emperor Penguin Foraging Ecology"),
+              h(
+                "p",
+                {},
+                "Research project cards appear here on the published page."
+              )
+            )
+          ),
+
+          h(
+            "article",
+            { className: "research-card" },
+            h(
+              "div",
+              { className: "card-content" },
+              h("h2", {}, "Gray Whale Ecology and Body Condition"),
+              h(
+                "p",
+                {},
+                "Research project cards appear here on the published page."
+              )
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+CMS.registerPreviewTemplate(
+  "research_landing",
+  ResearchLandingPreview
+);

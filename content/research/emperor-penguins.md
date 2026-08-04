@@ -1,4 +1,5 @@
 ---
+content_type: research_project
 title: "Emperor Penguin Foraging Ecology"
 description: "Biologging research examining emperor penguin diving behavior, prey capture attempts, and foraging energetics."
 image: "/images/uploads/emperor-penguin.JPG"

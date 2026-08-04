@@ -1,4 +1,5 @@
 ---
+content_type: research_project
 title: "Gray Whale Ecology and Body Condition"
 description: "Research examining gray whale body condition, migration, environmental variability, reproduction, and human impacts."
 image: "/images/uploads/gray-whale.jpeg"
