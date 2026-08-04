@@ -732,3 +732,135 @@ p {
     height: auto;
   }
 }
+
+/* Decap-controlled homepage sizing */
+.hero-title-small {
+  font-size: clamp(2.3rem, 4vw, 3.8rem);
+}
+
+.hero-title-medium {
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+}
+
+.hero-title-large {
+  font-size: clamp(3.4rem, 6vw, 5.8rem);
+}
+
+.hero-photo-small img {
+  width: 220px;
+  height: 220px;
+}
+
+.hero-photo-medium img {
+  width: 270px;
+  height: 270px;
+}
+
+.hero-photo-large img {
+  width: 320px;
+  height: 320px;
+}
+
+.hero-photo-xlarge img {
+  width: 390px;
+  height: 390px;
+}
+
+/* Decap-controlled page title sizing */
+.content-page .title-size-small {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+}
+
+.content-page .title-size-medium {
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+}
+
+.content-page .title-size-large {
+  font-size: clamp(3.4rem, 6vw, 5.5rem);
+}
+
+/* Decap-controlled text widths */
+.content-page-container.content-width-narrow {
+  max-width: 760px;
+}
+
+.content-page-container.content-width-normal {
+  max-width: 980px;
+}
+
+.content-page-container.content-width-wide {
+  max-width: 1180px;
+}
+
+.content-width-narrow .content-page-body,
+.content-width-narrow .content-page-description {
+  max-width: 660px;
+}
+
+.content-width-normal .content-page-body,
+.content-width-normal .content-page-description {
+  max-width: 780px;
+}
+
+.content-width-wide .content-page-body,
+.content-width-wide .content-page-description {
+  max-width: 980px;
+}
+
+/* Decap-controlled featured image sizes */
+.content-page-image.image-size-small {
+  width: min(100%, 420px);
+  max-height: 420px;
+}
+
+.content-page-image.image-size-medium {
+  width: min(100%, 620px);
+  max-height: 480px;
+}
+
+.content-page-image.image-size-large {
+  width: min(100%, 820px);
+  max-height: 560px;
+}
+
+.content-page-image.image-size-full {
+  width: 100%;
+  max-height: 680px;
+}
+
+/* Decap-controlled gallery columns */
+.photography-grid.gallery-columns-1 {
+  grid-template-columns: 1fr;
+}
+
+.photography-grid.gallery-columns-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.photography-grid.gallery-columns-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.photography-grid.gallery-columns-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+  .photography-grid.gallery-columns-3,
+  .photography-grid.gallery-columns-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-photo-xlarge img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 650px) {
+  .photography-grid.gallery-columns-2,
+  .photography-grid.gallery-columns-3,
+  .photography-grid.gallery-columns-4 {
+    grid-template-columns: 1fr;
+  }
+}

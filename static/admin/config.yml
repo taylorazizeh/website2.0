@@ -27,6 +27,24 @@ collections:
               - { label: "Primary button link", name: "primary_button_link", widget: "string" }
               - { label: "Secondary button text", name: "secondary_button_text", widget: "string" }
               - { label: "Secondary button link", name: "secondary_button_link", widget: "string" }
+              - label: "Title size"
+                name: "title_size"
+                widget: "select"
+                options:
+                  - { label: "Small", value: "small" }
+                  - { label: "Medium", value: "medium" }
+                  - { label: "Large", value: "large" }
+                default: "medium"
+
+              - label: "Headshot size"
+                name: "photo_size"
+                widget: "select"
+                options:
+                  - { label: "Small", value: "small" }
+                  - { label: "Medium", value: "medium" }
+                  - { label: "Large", value: "large" }
+                  - { label: "Extra large", value: "xlarge" }
+                default: "large"
 
           - label: "About section"
             name: "intro"
@@ -55,6 +73,35 @@ collections:
           - { label: "Page title", name: "title", widget: "string" }
           - { label: "Page description", name: "description", widget: "text" }
           - { label: "Page image", name: "image", widget: "image", required: false }
+
+          - label: "Title size"
+            name: "title_size"
+            widget: "select"
+            options:
+              - { label: "Small", value: "small" }
+              - { label: "Medium", value: "medium" }
+              - { label: "Large", value: "large" }
+            default: "medium"
+
+          - label: "Image size"
+            name: "image_size"
+            widget: "select"
+            options:
+              - { label: "Small", value: "small" }
+              - { label: "Medium", value: "medium" }
+              - { label: "Large", value: "large" }
+              - { label: "Full width", value: "full" }
+            default: "large"
+
+          - label: "Text width"
+            name: "content_width"
+            widget: "select"
+            options:
+              - { label: "Narrow", value: "narrow" }
+              - { label: "Normal", value: "normal" }
+              - { label: "Wide", value: "wide" }
+            default: "normal"
+
           - { label: "Page content", name: "body", widget: "markdown" }
 
       - name: "contact"
@@ -63,6 +110,25 @@ collections:
         fields:
           - { label: "Page title", name: "title", widget: "string" }
           - { label: "Page description", name: "description", widget: "text" }
+
+          - label: "Title size"
+            name: "title_size"
+            widget: "select"
+            options:
+              - { label: "Small", value: "small" }
+              - { label: "Medium", value: "medium" }
+              - { label: "Large", value: "large" }
+            default: "medium"
+
+          - label: "Text width"
+            name: "content_width"
+            widget: "select"
+            options:
+              - { label: "Narrow", value: "narrow" }
+              - { label: "Normal", value: "normal" }
+              - { label: "Wide", value: "wide" }
+            default: "normal"
+
           - { label: "Page content", name: "body", widget: "markdown" }
 
       - name: "photography"
@@ -72,6 +138,45 @@ collections:
           - { label: "Page title", name: "title", widget: "string" }
           - { label: "Page description", name: "description", widget: "text" }
           - { label: "Featured image", name: "image", widget: "image", required: false }
+
+          - label: "Title size"
+            name: "title_size"
+            widget: "select"
+            options:
+              - { label: "Small", value: "small" }
+              - { label: "Medium", value: "medium" }
+              - { label: "Large", value: "large" }
+            default: "medium"
+
+          - label: "Featured image size"
+            name: "image_size"
+            widget: "select"
+            options:
+              - { label: "Small", value: "small" }
+              - { label: "Medium", value: "medium" }
+              - { label: "Large", value: "large" }
+              - { label: "Full width", value: "full" }
+            default: "large"
+
+          - label: "Text width"
+            name: "content_width"
+            widget: "select"
+            options:
+              - { label: "Narrow", value: "narrow" }
+              - { label: "Normal", value: "normal" }
+              - { label: "Wide", value: "wide" }
+            default: "normal"
+
+          - label: "Gallery columns"
+            name: "gallery_columns"
+            widget: "select"
+            options:
+              - { label: "One column", value: "1" }
+              - { label: "Two columns", value: "2" }
+              - { label: "Three columns", value: "3" }
+              - { label: "Four columns", value: "4" }
+            default: "2"
+
           - label: "Gallery"
             name: "gallery"
             widget: "list"
@@ -111,6 +216,34 @@ collections:
         name: "image"
         widget: "image"
         required: false
+
+      - label: "Title size"
+        name: "title_size"
+        widget: "select"
+        options:
+          - { label: "Small", value: "small" }
+          - { label: "Medium", value: "medium" }
+          - { label: "Large", value: "large" }
+        default: "medium"
+
+      - label: "Image size"
+        name: "image_size"
+        widget: "select"
+        options:
+          - { label: "Small", value: "small" }
+          - { label: "Medium", value: "medium" }
+          - { label: "Large", value: "large" }
+          - { label: "Full width", value: "full" }
+        default: "large"
+
+      - label: "Text width"
+        name: "content_width"
+        widget: "select"
+        options:
+          - { label: "Narrow", value: "narrow" }
+          - { label: "Normal", value: "normal" }
+          - { label: "Wide", value: "wide" }
+        default: "normal"
 
       - label: "Project content"
         name: "body"
