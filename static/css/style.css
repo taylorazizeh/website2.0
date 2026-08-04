@@ -1152,3 +1152,88 @@ p {
   font-size: 0.9rem;
   text-align: center;
 }
+
+/* ==========================================
+   Publication title sizes and separators
+   ========================================== */
+
+.publication-title-small {
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+}
+
+.publication-title-medium {
+  font-size: clamp(1.55rem, 2.8vw, 2.2rem);
+}
+
+.publication-title-large {
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+}
+
+.publication-authors {
+  margin-bottom: 0.4rem;
+  color: var(--color-muted);
+}
+
+.publication-authors p {
+  margin-bottom: 0;
+}
+
+.publication-entry {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-top: 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.publication-entry:first-child {
+  padding-top: 0;
+}
+
+.publication-entry:last-child {
+  border-bottom: 0;
+}
+
+.publication-links a {
+  display: inline-block;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.1rem;
+}
+
+/* Publication title sizing */
+.publication-title-small {
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+}
+
+.publication-title-medium {
+  font-size: clamp(1.55rem, 2.8vw, 2.2rem);
+}
+
+.publication-title-large {
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+}
+
+/* Formatted author list */
+.publication-authors {
+  margin-bottom: 0.4rem;
+  color: var(--color-muted);
+}
+
+.publication-authors p {
+  margin: 0;
+}
+
+/* Divider between publication entries */
+.publication-entry {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-top: 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.publication-entry:first-child {
+  padding-top: 0;
+}
+
+.publication-entry:last-child {
+  border-bottom: 0;
+}

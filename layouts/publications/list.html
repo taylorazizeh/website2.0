@@ -36,11 +36,13 @@
                 >
               {{ end }}
 
-              <h2>{{ .Title }}</h2>
+              <h2 class="publication-title publication-title-{{ .Params.title_size | default "medium" }}">
+                {{ .Title }}
+              </h2>
 
-              <p class="publication-authors">
-                {{ .Params.authors }}
-              </p>
+              <div class="publication-authors">
+                {{ .Params.authors | markdownify }}
+              </div>
 
               <p class="publication-journal">
                 <em>{{ .Params.journal }}</em>
@@ -89,7 +91,21 @@
 
               <div class="publication-links">
                 {{ with .Params.doi }}
-                  <a href="{{ . }}" target="_blank" rel="noopener">
+                  {{ $doi := strings.TrimSpace . }}
+                  {{ $doiURL := $doi }}
+
+                  {{ if not (or
+                    (strings.HasPrefix $doi "http://")
+                    (strings.HasPrefix $doi "https://")
+                  ) }}
+                    {{ $doiURL = printf "https://doi.org/%s" $doi }}
+                  {{ end }}
+
+                  <a
+                    href="{{ $doiURL }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     View publication
                   </a>
                 {{ end }}

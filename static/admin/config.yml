@@ -498,9 +498,25 @@ collections:
         name: "title"
         widget: "string"
 
+      - label: "Publication title size"
+        name: "title_size"
+        widget: "select"
+        options:
+          - { label: "Small", value: "small" }
+          - { label: "Medium", value: "medium" }
+          - { label: "Large", value: "large" }
+        default: "medium"
+
       - label: "Authors"
         name: "authors"
-        widget: "text"
+        widget: "markdown"
+        minimal: true
+        buttons:
+          - bold
+          - italic
+          - link
+        editor_components: []
+        hint: "Use bold formatting to emphasize your name."
 
       - label: "Journal"
         name: "journal"
