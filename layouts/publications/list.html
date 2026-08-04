@@ -5,7 +5,6 @@
 {{ define "main" }}
   <section class="content-page">
     <div class="section-container content-page-container content-width-wide">
-
       <p class="section-label">Research outputs</p>
 
       <h1 class="title-size-medium">
@@ -25,15 +24,6 @@
       {{ end }}
 
       <div class="publications-list">
-        <p class="section-label">Research outputs</p>
-        <h1>Publications</h1>
-
-        {{ with .Content }}
-          <div class="content-page-body">
-            {{ . }}
-          </div>
-        {{ end }}
-
         {{ range sort .RegularPages ".Params.year" "desc" }}
           <article class="publication-entry">
             <p class="publication-year">
@@ -53,7 +43,12 @@
                 >
               {{ end }}
 
-              <h2 class="publication-title publication-title-{{ .Params.title_size | default "medium" }}">
+              <h2
+                class="
+                  publication-title
+                  publication-title-{{ .Params.title_size | default "medium" }}
+                "
+              >
                 {{ .Title }}
               </h2>
 

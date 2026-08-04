@@ -8,7 +8,7 @@ title_size: medium
 image_size: medium
 content_width: normal
 text_alignment: left
-draft: true
+draft: false
 ---
 My emperor penguin research uses biologging data to examine diving behavior, movement, energetic expenditure, and prey capture attempts.
 
