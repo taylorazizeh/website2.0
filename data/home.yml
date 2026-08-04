@@ -1,22 +1,25 @@
 hero:
-  eyebrow: "Marine Ecologist"
-  title: "Taylor Azizeh"
-  description: "Studying the ecology, energetics, movement, and conservation of marine megafauna through field research, biologging, photogrammetry, and quantitative ecology."
-  primary_button_text: "Explore my research"
-  primary_button_link: "/research/"
-  secondary_button_text: "View publications"
-  secondary_button_link: "/publications/"
-
+  eyebrow: Wildlife Ecologist
+  title: Taylor Azizeh
+  description: Ph.D. Fellow at Oregon State University studying the ecology,
+    energetics, movement, and conservation of marine megafauna through field
+    research, biologging, photogrammetry, and quantitative ecology.
+  primary_button_text: Explore my research
+  primary_button_link: /research/
+  secondary_button_text: View publications
+  secondary_button_link: /publications/
 intro:
-  label: "About my work"
-  heading: "Connecting individual energetics to marine ecosystem change"
-  paragraph_one: "My research focuses on how marine predators respond to environmental variability, energetic constraints, and human impacts."
-  paragraph_two: "I combine field observations, aerial photogrammetry, biologging, stable isotopes, movement data, and statistical modeling to study whales, penguins, and other marine wildlife."
-  link_text: "More about me"
-  link_url: "/about/"
-
+  label: About my work
+  heading: Connecting individual energetics to marine ecosystem change
+  paragraph_one: My research focuses on how marine predators respond to
+    environmental variability, energetic constraints, and human impacts.
+  paragraph_two: I combine field observations, aerial photogrammetry, biologging,
+    stable isotopes, movement data, and statistical modeling to study whales,
+    penguins, and other marine wildlife.
+  link_text: More about me
+  link_url: /about/
 contact:
-  label: "Get in touch"
-  heading: "Interested in my research or potential collaboration?"
-  button_text: "Contact me"
-  button_link: "/contact/"
+  label: Feel free to send me an email.
+  heading: Happy to answer any questions or chat about research.
+  button_text: Contact me
+  button_link: /contact/
