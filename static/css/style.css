@@ -909,3 +909,42 @@ p {
 .content-page-image.image-size-full {
   width: 100%;
 }
+
+/* ==========================================
+   Center page content beneath featured image
+   ========================================== */
+
+.content-page-container {
+  text-align: center;
+}
+
+.content-page-description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-page-body {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-page-body p {
+  text-align: center;
+}
+
+.content-page-body ul,
+.content-page-body ol {
+  display: inline-block;
+  text-align: left;
+}
+
+.content-page-body img {
+  display: block;
+  margin: 2rem auto;
+}
+
+.content-page-body h2,
+.content-page-body h3,
+.content-page-body h4 {
+  text-align: center;
+}
