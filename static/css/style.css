@@ -626,3 +626,23 @@ p {
     height: 230px;
   }
 }
+
+/* Safari compatibility */
+.hero-content.hero-grid {
+  width: min(calc(100% - 2rem), var(--content-width));
+}
+
+.hero-photo img {
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+.site-navigation {
+  flex-wrap: wrap;
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  .nav-container {
+    background: rgb(74, 108, 120);
+  }
+}
