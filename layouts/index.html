@@ -17,7 +17,7 @@
 <body>
   <header class="site-header">
     <div class="nav-container">
-      <a class="site-logo" href="/">Taylor Azizeh</a>
+      
 
       <button
         class="menu-toggle"
@@ -41,51 +41,45 @@
 
   <main>
     <section class="hero">
-  <div class="hero-overlay"></div>
+      <div class="hero-content hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            {{ hugo.Data.home.hero.eyebrow }}
+          </p>
 
-  <div class="hero-content hero-grid">
+          <h1>
+            {{ hugo.Data.home.hero.title }}
+          </h1>
 
-    <div class="hero-text">
+          <p class="hero-description">
+            {{ hugo.Data.home.hero.description }}
+          </p>
 
-      <p class="eyebrow">
-        {{ hugo.Data.home.hero.eyebrow }}
-      </p>
+          <div class="hero-buttons">
+            <a
+              class="button button-primary"
+              href="{{ hugo.Data.home.hero.primary_button_link }}"
+            >
+              {{ hugo.Data.home.hero.primary_button_text }}
+            </a>
 
-      <h1>
-        {{ hugo.Data.home.hero.title }}
-      </h1>
+            <a
+              class="button button-secondary"
+              href="{{ hugo.Data.home.hero.secondary_button_link }}"
+            >
+              {{ hugo.Data.home.hero.secondary_button_text }}
+            </a>
+          </div>
+        </div>
 
-      <p class="hero-description">
-        {{ hugo.Data.home.hero.description }}
-      </p>
-
-      <div class="hero-buttons">
-        <a
-          class="button button-primary"
-          href="{{ hugo.Data.home.hero.primary_button_link }}"
-        >
-          {{ hugo.Data.home.hero.primary_button_text }}
-        </a>
-
-        <a
-          class="button button-secondary"
-          href="{{ hugo.Data.home.hero.secondary_button_link }}"
-        >
-          {{ hugo.Data.home.hero.secondary_button_text }}
-        </a>
+        <div class="hero-photo">
+          <img
+            src="/images/uploads/headshot.jpg"
+            alt="Portrait of Taylor Azizeh"
+          >
+        </div>
       </div>
-
-    </div>
-
-    <div class="hero-photo">
-      <img
-        src="/images/uploads/headshot.jpg"
-        alt="Portrait of Taylor Azizeh"
-      >
-    </div>
-
-  </div>
-</section>
+    </section>
 
     <section class="section intro-section">
       <div class="section-container intro-grid">
