@@ -54,6 +54,7 @@ collections:
         fields:
           - { label: "Page title", name: "title", widget: "string" }
           - { label: "Page description", name: "description", widget: "text" }
+          - { label: "Page image", name: "image", widget: "image", required: false }
           - { label: "Page content", name: "body", widget: "markdown" }
 
       - name: "contact"
@@ -70,6 +71,16 @@ collections:
         fields:
           - { label: "Page title", name: "title", widget: "string" }
           - { label: "Page description", name: "description", widget: "text" }
+          - { label: "Featured image", name: "image", widget: "image", required: false }
+          - label: "Gallery"
+            name: "gallery"
+            widget: "list"
+            required: false
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+              - { label: "Alt text", name: "alt", widget: "string", required: false }
           - { label: "Page content", name: "body", widget: "markdown" }
 
   - name: "research"

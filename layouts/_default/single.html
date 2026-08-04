@@ -65,6 +65,23 @@
       <div class="content-page-body">
         {{ .Content }}
       </div>
+
+      {{ with .Params.gallery }}
+        <div class="photography-grid">
+          {{ range . }}
+            <figure class="photography-item">
+              <img
+                src="{{ .image }}"
+                alt="{{ with .alt }}{{ . }}{{ else }}Photography by Taylor Azizeh{{ end }}"
+              >
+
+              {{ with .caption }}
+                <figcaption>{{ . }}</figcaption>
+              {{ end }}
+            </figure>
+          {{ end }}
+        </div>
+      {{ end }}
     </div>
   </main>
 
