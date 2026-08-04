@@ -1253,3 +1253,29 @@ p {
   border-bottom: 1px solid currentColor;
   padding-bottom: 0.1rem;
 }
+
+/* Homepage "Recent Work" text colors */
+.publication-section {
+  color: #e7dfcf;
+}
+
+.publication-section h2,
+.publication-section h3 {
+  color: #f5efe3;
+}
+
+.publication-section .section-label,
+.publication-section .publication-year,
+.publication-section .publication-authors,
+.publication-section .publication-journal {
+  color: #d8cfbf;
+}
+
+.publication-section .text-link {
+  color: #f5efe3;
+}
+
+.publication-section .text-link:hover {
+  color: #ffffff;
+}
+
