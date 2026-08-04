@@ -13,8 +13,16 @@
         </p>
       {{ end }}
 
+      {{ with .Params.image }}
+        <img
+          class="research-landing-image"
+          src="{{ . }}"
+          alt="{{ $.Title }}"
+        >
+      {{ end }}
+
       {{ with .Content }}
-        <div class="content-page-body">
+        <div class="content-page-body research-landing-intro">
           {{ . }}
         </div>
       {{ end }}

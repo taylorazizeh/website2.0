@@ -1047,3 +1047,19 @@ p {
   font-size: 0.9rem;
   text-align: center;
 }
+
+/* Research landing page */
+.research-landing-image {
+  display: block;
+  width: min(100%, 820px);
+  height: auto;
+  margin: 2rem auto;
+  object-fit: contain;
+}
+
+.research-landing-intro {
+  margin-right: auto;
+  margin-bottom: 3rem;
+  margin-left: auto;
+  text-align: center;
+}
