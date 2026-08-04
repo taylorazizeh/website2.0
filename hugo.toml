@@ -1,0 +1,8 @@
+baseURL = "https://www.taylorazizeh.com/"
+locale = "en-US"
+title = "Taylor Azizeh | Marine Ecologist"
+
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+
+[params]
+  description = "Taylor Azizeh is a marine ecologist studying whales, penguins, biologging, body condition, and marine conservation."

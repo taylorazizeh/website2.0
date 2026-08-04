@@ -1,0 +1,22 @@
+hero:
+  eyebrow: "Marine Ecologist"
+  title: "Taylor Azizeh"
+  description: "Studying the ecology, energetics, movement, and conservation of marine megafauna through field research, biologging, photogrammetry, and quantitative ecology."
+  primary_button_text: "Explore my research"
+  primary_button_link: "/research/"
+  secondary_button_text: "View publications"
+  secondary_button_link: "/publications/"
+
+intro:
+  label: "About my work"
+  heading: "Connecting individual energetics to marine ecosystem change"
+  paragraph_one: "My research focuses on how marine predators respond to environmental variability, energetic constraints, and human impacts."
+  paragraph_two: "I combine field observations, aerial photogrammetry, biologging, stable isotopes, movement data, and statistical modeling to study whales, penguins, and other marine wildlife."
+  link_text: "More about me"
+  link_url: "/about/"
+
+contact:
+  label: "Get in touch"
+  heading: "Interested in my research or potential collaboration?"
+  button_text: "Contact me"
+  button_link: "/contact/"
