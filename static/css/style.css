@@ -1063,3 +1063,26 @@ p {
   margin-left: auto;
   text-align: center;
 }
+
+/* Decap-controlled Research landing image */
+.research-landing-image {
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+.research-landing-image.image-size-small {
+  width: min(100%, 420px);
+}
+
+.research-landing-image.image-size-medium {
+  width: min(100%, 620px);
+}
+
+.research-landing-image.image-size-large {
+  width: min(100%, 820px);
+}
+
+.research-landing-image.image-size-full {
+  width: 100%;
+}

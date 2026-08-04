@@ -15,7 +15,11 @@
 
       {{ with .Params.image }}
         <img
-          class="research-landing-image"
+          class="
+            research-landing-image
+            image-size-{{ $.Params.image_size | default "large" }}
+            image-align-{{ $.Params.image_alignment | default "center" }}
+          "
           src="{{ . }}"
           alt="{{ $.Title }}"
         >
