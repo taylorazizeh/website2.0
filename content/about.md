@@ -7,6 +7,14 @@ title_size: medium
 image_size: medium
 image_alignment: left
 content_width: normal
+text_alignment: center
+after_images:
+  - size: medium
+    alignment: center
+    image: /images/uploads/tws-2019.jpg
+  - size: medium
+    alignment: center
+    image: /images/uploads/img_6361.jpg
 ---
 I am a wildlife biologist studying the behavior, energetics, movement, and conservation of marine megafauna.
 
