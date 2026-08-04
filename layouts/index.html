@@ -156,9 +156,9 @@
             {{ .Title }}
           </h3>
 
-          <p class="publication-authors">
-            {{ .Params.authors }}
-          </p>
+          <div class="publication-authors">
+            {{ .Params.authors | markdownify }}
+          </div>
 
           <p class="publication-journal">
             {{ .Params.journal }}
