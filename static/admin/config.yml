@@ -47,3 +47,75 @@ collections:
               - { label: "Heading", name: "heading", widget: "string" }
               - { label: "Button text", name: "button_text", widget: "string" }
               - { label: "Button link", name: "button_link", widget: "string" }
+
+  - name: "publications"
+    label: "Publications"
+    label_singular: "Publication"
+    folder: "content/publications"
+    create: true
+    delete: true
+    slug: "{{year}}-{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{year}} — {{title}}"
+
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Authors"
+        name: "authors"
+        widget: "text"
+
+      - label: "Journal"
+        name: "journal"
+        widget: "string"
+
+      - label: "Year"
+        name: "year"
+        widget: "number"
+        value_type: "int"
+
+      - label: "Volume"
+        name: "volume"
+        widget: "string"
+        required: false
+
+      - label: "Pages"
+        name: "pages"
+        widget: "string"
+        required: false
+
+      - label: "Publication date"
+        name: "publication_date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        required: false
+
+      - label: "DOI or publication URL"
+        name: "doi"
+        widget: "string"
+        required: false
+
+      - label: "PDF"
+        name: "pdf"
+        widget: "file"
+        required: false
+
+      - label: "Show on homepage"
+        name: "featured"
+        widget: "boolean"
+        default: false
+
+      - label: "Description or abstract"
+        name: "body"
+        widget: "markdown"
+        required: false
+
+      - label: "Draft"
+        name: "draft"
+        widget: "boolean"
+        default: false

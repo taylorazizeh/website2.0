@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Publications | {{ .Site.Title }}</title>
+  <meta name="description" content="Publications by Taylor Azizeh">
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header class="page-header">
+    <div class="nav-container">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+      >
+        Menu
+      </button>
+
+      <nav
+        id="site-navigation"
+        class="site-navigation"
+        aria-label="Main navigation"
+      >
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/research/">Research</a>
+        <a href="/publications/">Publications</a>
+        <a href="/photography/">Photography</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="publications-page">
+    <div class="section-container">
+      <div class="page-intro">
+        <p class="section-label">Research outputs</p>
+        <h1>Publications</h1>
+      </div>
+
+      <div class="publications-list">
+        {{ range sort .RegularPages ".Params.year" "desc" }}
+          <article class="publication-entry">
+            <p class="publication-year">
+              {{ .Params.year }}
+            </p>
+
+            <div>
+              <h2>{{ .Title }}</h2>
+
+              <p class="publication-authors">
+                {{ .Params.authors }}
+              </p>
+
+              <p class="publication-journal">
+                <em>{{ .Params.journal }}</em>
+                {{ with .Params.volume }}, {{ . }}{{ end }}
+                {{ with .Params.pages }}, {{ . }}{{ end }}
+              </p>
+
+              {{ with .Content }}
+                <div class="publication-summary">
+                  {{ . }}
+                </div>
+              {{ end }}
+
+              <div class="publication-links">
+                {{ with .Params.doi }}
+                  <a href="{{ . }}" target="_blank" rel="noopener">
+                    View publication
+                  </a>
+                {{ end }}
+
+                {{ with .Params.pdf }}
+                  <a href="{{ . }}" target="_blank" rel="noopener">
+                    Download PDF
+                  </a>
+                {{ end }}
+              </div>
+            </div>
+          </article>
+        {{ else }}
+          <p>No publications have been added yet.</p>
+        {{ end }}
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-container footer-grid">
+      <div>
+        <p class="footer-name">Taylor Azizeh</p>
+        <p>Marine ecologist and quantitative researcher</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="/research/">Research</a>
+        <a href="/publications/">Publications</a>
+        <a href="/photography/">Photography</a>
+        <a href="/admin/">Edit website</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/site.js"></script>
+</body>
+</html>
