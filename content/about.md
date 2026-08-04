@@ -5,7 +5,7 @@ description: I'm Taylor Azizeh, a current Ph.D. Fellow at Oregon State
 image: /images/uploads/csumb_headshot_nov2023.jpg
 title_size: medium
 image_size: medium
-image_alignment: center
+image_alignment: left
 content_width: normal
 ---
 I am a wildlife biologist studying the behavior, energetics, movement, and conservation of marine megafauna.
