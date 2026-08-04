@@ -864,3 +864,22 @@ p {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================
+   Decap image alignment controls
+   ========================================== */
+
+.image-align-left {
+  display: block;
+  margin: 0 auto 2rem 0;
+}
+
+.image-align-center {
+  display: block;
+  margin: 0 auto 2rem auto;
+}
+
+.image-align-right {
+  display: block;
+  margin: 0 0 2rem auto;
+}

@@ -93,6 +93,15 @@ collections:
               - { label: "Full width", value: "full" }
             default: "large"
 
+          - label: "Image alignment"
+            name: "image_alignment"
+            widget: "select"
+            options:
+              - { label: "Left", value: "left" }
+              - { label: "Center", value: "center" }
+              - { label: "Right", value: "right" }
+            default: "center"
+
           - label: "Text width"
             name: "content_width"
             widget: "select"

@@ -12,6 +12,7 @@
           class="
             content-page-image
             image-size-{{ $.Params.image_size | default "large" }}
+            image-align-{{ $.Params.image_alignment | default "center" }}
           "
           src="{{ . }}"
           alt="{{ $.Title }}"
