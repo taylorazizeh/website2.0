@@ -111,6 +111,46 @@ collections:
               - { label: "Wide", value: "wide" }
             default: "normal"
 
+
+          - label: "Text alignment"
+            name: "text_alignment"
+            widget: "select"
+            options:
+              - { label: "Left", value: "left" }
+              - { label: "Center", value: "center" }
+              - { label: "Justified", value: "justify" }
+            default: "left"
+
+          - label: "Photos after text"
+            name: "after_images"
+            widget: "list"
+            required: false
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+
+              - label: "Photo size"
+                name: "size"
+                widget: "select"
+                options:
+                  - { label: "Small", value: "small" }
+                  - { label: "Medium", value: "medium" }
+                  - { label: "Large", value: "large" }
+                  - { label: "Full width", value: "full" }
+                default: "medium"
+
+              - label: "Photo alignment"
+                name: "alignment"
+                widget: "select"
+                options:
+                  - { label: "Left", value: "left" }
+                  - { label: "Center", value: "center" }
+                  - { label: "Right", value: "right" }
+                default: "center"
+
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+              - { label: "Alt text", name: "alt", widget: "string", required: false }
+
           - { label: "Page content", name: "body", widget: "markdown" }
 
       - name: "contact"
@@ -137,6 +177,46 @@ collections:
               - { label: "Normal", value: "normal" }
               - { label: "Wide", value: "wide" }
             default: "normal"
+
+
+          - label: "Text alignment"
+            name: "text_alignment"
+            widget: "select"
+            options:
+              - { label: "Left", value: "left" }
+              - { label: "Center", value: "center" }
+              - { label: "Justified", value: "justify" }
+            default: "left"
+
+          - label: "Photos after text"
+            name: "after_images"
+            widget: "list"
+            required: false
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+
+              - label: "Photo size"
+                name: "size"
+                widget: "select"
+                options:
+                  - { label: "Small", value: "small" }
+                  - { label: "Medium", value: "medium" }
+                  - { label: "Large", value: "large" }
+                  - { label: "Full width", value: "full" }
+                default: "medium"
+
+              - label: "Photo alignment"
+                name: "alignment"
+                widget: "select"
+                options:
+                  - { label: "Left", value: "left" }
+                  - { label: "Center", value: "center" }
+                  - { label: "Right", value: "right" }
+                default: "center"
+
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+              - { label: "Alt text", name: "alt", widget: "string", required: false }
 
           - { label: "Page content", name: "body", widget: "markdown" }
 
@@ -195,6 +275,46 @@ collections:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Caption", name: "caption", widget: "string", required: false }
               - { label: "Alt text", name: "alt", widget: "string", required: false }
+
+          - label: "Text alignment"
+            name: "text_alignment"
+            widget: "select"
+            options:
+              - { label: "Left", value: "left" }
+              - { label: "Center", value: "center" }
+              - { label: "Justified", value: "justify" }
+            default: "left"
+
+          - label: "Photos after text"
+            name: "after_images"
+            widget: "list"
+            required: false
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+
+              - label: "Photo size"
+                name: "size"
+                widget: "select"
+                options:
+                  - { label: "Small", value: "small" }
+                  - { label: "Medium", value: "medium" }
+                  - { label: "Large", value: "large" }
+                  - { label: "Full width", value: "full" }
+                default: "medium"
+
+              - label: "Photo alignment"
+                name: "alignment"
+                widget: "select"
+                options:
+                  - { label: "Left", value: "left" }
+                  - { label: "Center", value: "center" }
+                  - { label: "Right", value: "right" }
+                default: "center"
+
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+              - { label: "Alt text", name: "alt", widget: "string", required: false }
+
           - { label: "Page content", name: "body", widget: "markdown" }
 
   - name: "research"
@@ -253,6 +373,46 @@ collections:
           - { label: "Normal", value: "normal" }
           - { label: "Wide", value: "wide" }
         default: "normal"
+
+
+      - label: "Text alignment"
+        name: "text_alignment"
+        widget: "select"
+        options:
+          - { label: "Left", value: "left" }
+          - { label: "Center", value: "center" }
+          - { label: "Justified", value: "justify" }
+        default: "left"
+
+      - label: "Photos after text"
+        name: "after_images"
+        widget: "list"
+        required: false
+        summary: "{{fields.caption}}"
+        fields:
+          - { label: "Photo", name: "image", widget: "image" }
+
+          - label: "Photo size"
+            name: "size"
+            widget: "select"
+            options:
+              - { label: "Small", value: "small" }
+              - { label: "Medium", value: "medium" }
+              - { label: "Large", value: "large" }
+              - { label: "Full width", value: "full" }
+            default: "medium"
+
+          - label: "Photo alignment"
+            name: "alignment"
+            widget: "select"
+            options:
+              - { label: "Left", value: "left" }
+              - { label: "Center", value: "center" }
+              - { label: "Right", value: "right" }
+            default: "center"
+
+          - { label: "Caption", name: "caption", widget: "string", required: false }
+          - { label: "Alt text", name: "alt", widget: "string", required: false }
 
       - label: "Project content"
         name: "body"

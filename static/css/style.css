@@ -948,3 +948,102 @@ p {
 .content-page-body h4 {
   text-align: center;
 }
+
+/* ==========================================
+   Decap-controlled text alignment
+   ========================================== */
+
+.content-page-body.text-align-left,
+.content-page-body.text-align-left p,
+.content-page-body.text-align-left h2,
+.content-page-body.text-align-left h3,
+.content-page-body.text-align-left h4 {
+  text-align: left;
+}
+
+.content-page-body.text-align-center,
+.content-page-body.text-align-center p,
+.content-page-body.text-align-center h2,
+.content-page-body.text-align-center h3,
+.content-page-body.text-align-center h4 {
+  text-align: center;
+}
+
+.content-page-body.text-align-justify,
+.content-page-body.text-align-justify p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.content-page-body.text-align-justify h2,
+.content-page-body.text-align-justify h3,
+.content-page-body.text-align-justify h4 {
+  text-align: left;
+}
+
+/* Keep lists readable when surrounding text is centered */
+.content-page-body.text-align-center ul,
+.content-page-body.text-align-center ol {
+  display: inline-block;
+  text-align: left;
+}
+
+/* ==========================================
+   Additional photos placed after page text
+   ========================================== */
+
+.after-text-images {
+  display: grid;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.after-text-image {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.after-text-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.after-image-size-small {
+  width: min(100%, 360px);
+}
+
+.after-image-size-medium {
+  width: min(100%, 560px);
+}
+
+.after-image-size-large {
+  width: min(100%, 820px);
+}
+
+.after-image-size-full {
+  width: 100%;
+}
+
+.after-image-align-left {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.after-image-align-center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.after-image-align-right {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.after-text-image figcaption {
+  margin-top: 0.65rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}

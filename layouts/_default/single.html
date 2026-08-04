@@ -35,9 +35,37 @@
         </p>
       {{ end }}
 
-      <div class="content-page-body">
+      <div
+        class="
+          content-page-body
+          text-align-{{ .Params.text_alignment | default "left" }}
+        "
+      >
         {{ .Content }}
       </div>
+
+      {{ with .Params.after_images }}
+        <div class="after-text-images">
+          {{ range . }}
+            <figure
+              class="
+                after-text-image
+                after-image-size-{{ .size | default "medium" }}
+                after-image-align-{{ .alignment | default "center" }}
+              "
+            >
+              <img
+                src="{{ .image }}"
+                alt="{{ .alt | default "Photography by Taylor Azizeh" }}"
+              >
+
+              {{ with .caption }}
+                <figcaption>{{ . }}</figcaption>
+              {{ end }}
+            </figure>
+          {{ end }}
+        </div>
+      {{ end }}
 
       {{ with .Params.gallery }}
         <div
