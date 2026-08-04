@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ site.Language.LanguageCode | default "en" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    {{ block "title" . }}
+      {{ if .IsHome }}
+        {{ site.Title }}
+      {{ else }}
+        {{ .Title }} | {{ site.Title }}
+      {{ end }}
+    {{ end }}
+  </title>
+
+  {{ $description := .Params.description | default site.Params.description }}
+
+  {{ with $description }}
+    <meta name="description" content="{{ . }}">
+  {{ end }}
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  {{ block "head" . }}{{ end }}
+</head>
+
+<body class="{{ if .IsHome }}home-page{{ else }}interior-page{{ end }}">
+  {{ partial "header.html" . }}
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ partial "footer.html" . }}
+
+  <script src="/js/site.js"></script>
+
+  {{ block "scripts" . }}{{ end }}
+</body>
+</html>

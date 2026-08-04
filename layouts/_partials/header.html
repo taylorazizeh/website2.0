@@ -1,0 +1,57 @@
+<header class="{{ if .IsHome }}site-header{{ else }}page-header{{ end }}">
+  <div class="nav-container">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-navigation"
+    >
+      Menu
+    </button>
+
+    <nav
+      id="site-navigation"
+      class="site-navigation"
+      aria-label="Main navigation"
+    >
+      <a href="/"{{ if .IsHome }} aria-current="page"{{ end }}>
+        Home
+      </a>
+
+      <a
+        href="/about/"
+        {{ if eq .RelPermalink "/about/" }}aria-current="page"{{ end }}
+      >
+        About
+      </a>
+
+      <a
+        href="/research/"
+        {{ if eq .Section "research" }}aria-current="page"{{ end }}
+      >
+        Research
+      </a>
+
+      <a
+        href="/publications/"
+        {{ if eq .Section "publications" }}aria-current="page"{{ end }}
+      >
+        Publications
+      </a>
+
+      <a
+        href="/photography/"
+        {{ if eq .RelPermalink "/photography/" }}aria-current="page"{{ end }}
+      >
+        Photography
+      </a>
+
+      <a
+        href="/contact/"
+        {{ if eq .RelPermalink "/contact/" }}aria-current="page"{{ end }}
+      >
+        Contact
+      </a>
+    </nav>
+  </div>
+</header>

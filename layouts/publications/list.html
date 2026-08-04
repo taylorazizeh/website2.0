@@ -1,43 +1,9 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+{{ define "title" }}
+  Publications | {{ site.Title }}
+{{ end }}
 
-  <title>Publications | {{ .Site.Title }}</title>
-  <meta name="description" content="Publications by Taylor Azizeh">
-
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-  <header class="page-header">
-    <div class="nav-container">
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="site-navigation"
-      >
-        Menu
-      </button>
-
-      <nav
-        id="site-navigation"
-        class="site-navigation"
-        aria-label="Main navigation"
-      >
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/research/">Research</a>
-        <a href="/publications/">Publications</a>
-        <a href="/photography/">Photography</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="publications-page">
+{{ define "main" }}
+  <section class="publications-page">
     <div class="section-container">
       <div class="page-intro">
         <p class="section-label">Research outputs</p>
@@ -52,7 +18,9 @@
             </p>
 
             <div>
-              <h2>{{ .Title }}</h2>
+              <h2>
+                {{ .Title }}
+              </h2>
 
               <p class="publication-authors">
                 {{ .Params.authors }}
@@ -60,8 +28,14 @@
 
               <p class="publication-journal">
                 <em>{{ .Params.journal }}</em>
-                {{ with .Params.volume }}, {{ . }}{{ end }}
-                {{ with .Params.pages }}, {{ . }}{{ end }}
+
+                {{ with .Params.volume }}
+                  , {{ . }}
+                {{ end }}
+
+                {{ with .Params.pages }}
+                  , {{ . }}
+                {{ end }}
               </p>
 
               {{ with .Content }}
@@ -90,24 +64,5 @@
         {{ end }}
       </div>
     </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="section-container footer-grid">
-      <div>
-        <p class="footer-name">Taylor Azizeh</p>
-        <p>Marine ecologist and quantitative researcher</p>
-      </div>
-
-      <div class="footer-links">
-        <a href="/research/">Research</a>
-        <a href="/publications/">Publications</a>
-        <a href="/photography/">Photography</a>
-        <a href="/admin/">Edit website</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="/js/site.js"></script>
-</body>
-</html>
+  </section>
+{{ end }}

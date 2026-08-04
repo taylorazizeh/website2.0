@@ -1,60 +1,32 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>{{ .Title }} | {{ .Site.Title }}</title>
-
-  {{ with .Params.description }}
-    <meta name="description" content="{{ . }}">
-  {{ end }}
-
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-  <header class="page-header">
-    <div class="nav-container">
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="site-navigation"
-      >
-        Menu
-      </button>
-
-      <nav
-        id="site-navigation"
-        class="site-navigation"
-        aria-label="Main navigation"
-      >
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/research/">Research</a>
-        <a href="/publications/">Publications</a>
-        <a href="/photography/">Photography</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="content-page">
-    <div class="section-container content-page-container">
+{{ define "main" }}
+  <section class="content-page">
+    <div
+      class="
+        section-container
+        content-page-container
+        content-width-{{ .Params.content_width | default "normal" }}
+      "
+    >
       {{ with .Params.image }}
         <img
-          class="content-page-image"
+          class="
+            content-page-image
+            image-size-{{ $.Params.image_size | default "large" }}
+          "
           src="{{ . }}"
           alt="{{ $.Title }}"
         >
       {{ end }}
 
-      <p class="section-label">
-        {{ .Section | humanize }}
-      </p>
+      {{ with .Section }}
+        <p class="section-label">
+          {{ . | humanize }}
+        </p>
+      {{ end }}
 
-      <h1>{{ .Title }}</h1>
+      <h1 class="title-size-{{ .Params.title_size | default "medium" }}">
+        {{ .Title }}
+      </h1>
 
       {{ with .Params.description }}
         <p class="content-page-description">
@@ -67,40 +39,28 @@
       </div>
 
       {{ with .Params.gallery }}
-        <div class="photography-grid">
+        <div
+          class="
+            photography-grid
+            gallery-columns-{{ $.Params.gallery_columns | default "2" }}
+          "
+        >
           {{ range . }}
             <figure class="photography-item">
               <img
                 src="{{ .image }}"
-                alt="{{ with .alt }}{{ . }}{{ else }}Photography by Taylor Azizeh{{ end }}"
+                alt="{{ .alt | default "Photography by Taylor Azizeh" }}"
               >
 
               {{ with .caption }}
-                <figcaption>{{ . }}</figcaption>
+                <figcaption>
+                  {{ . }}
+                </figcaption>
               {{ end }}
             </figure>
           {{ end }}
         </div>
       {{ end }}
     </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="section-container footer-grid">
-      <div>
-        <p class="footer-name">Taylor Azizeh</p>
-        <p>Marine ecologist and quantitative researcher</p>
-      </div>
-
-      <div class="footer-links">
-        <a href="/research/">Research</a>
-        <a href="/publications/">Publications</a>
-        <a href="/photography/">Photography</a>
-        <a href="/admin/">Edit website</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="/js/site.js"></script>
-</body>
-</html>
+  </section>
+{{ end }}

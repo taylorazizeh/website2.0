@@ -1,235 +1,211 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+{{ define "main" }}
+  <section class="hero">
+    <div class="hero-content hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">
+          {{ hugo.Data.home.hero.eyebrow }}
+        </p>
 
-  <title>{{ .Site.Title }}</title>
+        <h1
+          class="
+            hero-title
+            hero-title-{{ hugo.Data.home.hero.title_size | default "medium" }}
+          "
+        >
+          {{ hugo.Data.home.hero.title }}
+        </h1>
 
-  <meta
-    name="description"
-    content="{{ .Site.Params.description }}"
-  >
+        <p class="hero-description">
+          {{ hugo.Data.home.hero.description }}
+        </p>
 
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-  <header class="site-header">
-    <div class="nav-container">
-      
-
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="site-navigation"
-      >
-        Menu
-      </button>
-
-      <nav id="site-navigation" class="site-navigation" aria-label="Main navigation">
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/research/">Research</a>
-        <a href="/publications/">Publications</a>
-        <a href="/photography/">Photography</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-content hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">
-            {{ hugo.Data.home.hero.eyebrow }}
-          </p>
-
-          <h1>
-            {{ hugo.Data.home.hero.title }}
-          </h1>
-
-          <p class="hero-description">
-            {{ hugo.Data.home.hero.description }}
-          </p>
-
-          <div class="hero-buttons">
-            <a
-              class="button button-primary"
-              href="{{ hugo.Data.home.hero.primary_button_link }}"
-            >
-              {{ hugo.Data.home.hero.primary_button_text }}
-            </a>
-
-            <a
-              class="button button-secondary"
-              href="{{ hugo.Data.home.hero.secondary_button_link }}"
-            >
-              {{ hugo.Data.home.hero.secondary_button_text }}
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-photo">
-          <img
-            src="/images/uploads/headshot.jpg"
-            alt="Portrait of Taylor Azizeh"
+        <div class="hero-buttons">
+          <a
+            class="button button-primary"
+            href="{{ hugo.Data.home.hero.primary_button_link }}"
           >
+            {{ hugo.Data.home.hero.primary_button_text }}
+          </a>
+
+          <a
+            class="button button-secondary"
+            href="{{ hugo.Data.home.hero.secondary_button_link }}"
+          >
+            {{ hugo.Data.home.hero.secondary_button_text }}
+          </a>
         </div>
       </div>
-    </section>
 
-    <section class="section intro-section">
-      <div class="section-container intro-grid">
-        <div>
-          <p class="section-label">{{ hugo.Data.home.intro.label }}</p>
-
-          <h2>{{ hugo.Data.home.intro.heading }}</h2>
-        </div>
-
-        <div>
-          <p>
-            {{ hugo.Data.home.intro.paragraph_one }}
-          </p>
-
-          <p>
-            {{ hugo.Data.home.intro.paragraph_two }}
-          </p>
-
-          <a class="text-link" href="{{ hugo.Data.home.intro.link_url }}">{{ hugo.Data.home.intro.link_text }} →</a>
-        </div>
+      <div
+        class="
+          hero-photo
+          hero-photo-{{ hugo.Data.home.hero.photo_size | default "large" }}
+        "
+      >
+        <img
+          src="/images/uploads/headshot.jpg"
+          alt="Portrait of Taylor Azizeh"
+        >
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section research-section">
-      <div class="section-container">
-        <div class="section-heading">
-          <div>
-            <p class="section-label">Featured research</p>
-            <h2>Current research areas</h2>
-          </div>
+  <section class="section intro-section">
+    <div class="section-container intro-grid">
+      <div>
+        <p class="section-label">
+          {{ hugo.Data.home.intro.label }}
+        </p>
 
-          <a class="text-link" href="/research/">View all research →</a>
-        </div>
-
-        <div class="card-grid">
-          <article class="research-card">
-            <div class="card-image card-image-whale" role="img" aria-label="Gray whale"></div>
-
-            <div class="card-content">
-              <p class="card-category">Marine mammals</p>
-              <h3>Gray whale ecology and body condition</h3>
-
-              <p>
-                Examining how environmental variability, migration, reproduction,
-                and entanglement influence body condition and population health.
-              </p>
-
-              <a class="card-link" href="/research/gray-whales/">
-                Explore gray whale research →
-              </a>
-            </div>
-          </article>
-
-          <article class="research-card">
-            <div class="card-image card-image-penguin" role="img" aria-label="Emperor penguin"></div>
-
-            <div class="card-content">
-              <p class="card-category">Biologging</p>
-              <h3>Emperor penguin foraging ecology</h3>
-
-              <p>
-                Using movement, depth, acceleration, and energetic data to
-                understand prey capture behavior and foraging strategies.
-              </p>
-
-              <a class="card-link" href="/research/emperor-penguins/">
-                Explore penguin research →
-              </a>
-            </div>
-          </article>
-        </div>
+        <h2>
+          {{ hugo.Data.home.intro.heading }}
+        </h2>
       </div>
-    </section>
 
-    <section class="section publication-section">
-      <div class="section-container publication-grid">
-        <div>
-          <p class="section-label">Selected publication</p>
-          <h2>Recent work</h2>
-        </div>
+      <div>
+        <p>
+          {{ hugo.Data.home.intro.paragraph_one }}
+        </p>
 
-        {{ $publications := where .Site.RegularPages "Section" "publications" }}
-        {{ $featured := where $publications ".Params.featured" true }}
+        <p>
+          {{ hugo.Data.home.intro.paragraph_two }}
+        </p>
 
-        {{ range first 1 (sort $featured ".Params.year" "desc") }}
-          <article class="publication-card">
-            <p class="publication-year">
-              {{ .Params.year }}
-            </p>
-
-            <h3>
-              {{ .Title }}
-            </h3>
-
-            <p class="publication-authors">
-              {{ .Params.authors }}
-            </p>
-
-            <p class="publication-journal">
-              {{ .Params.journal }}
-              {{ with .Params.volume }}, {{ . }}{{ end }}
-              {{ with .Params.pages }}, {{ . }}{{ end }}
-            </p>
-
-            <a class="text-link" href="/publications/">
-              View publications →
-            </a>
-          </article>
-        {{ else }}
-          <article class="publication-card">
-            <p>No featured publication has been selected.</p>
-
-            <a class="text-link" href="/publications/">
-              View publications →
-            </a>
-          </article>
-        {{ end }}
-      </div>
-    </section>
-
-    <section class="section contact-section">
-      <div class="section-container contact-box">
-        <div>
-          <p class="section-label">{{ hugo.Data.home.contact.label }}</p>
-          <h2>{{ hugo.Data.home.contact.heading }}</h2>
-        </div>
-
-        <a class="button button-primary" href="{{ hugo.Data.home.contact.button_link }}">
-          {{ hugo.Data.home.contact.button_text }}
+        <a
+          class="text-link"
+          href="{{ hugo.Data.home.intro.link_url }}"
+        >
+          {{ hugo.Data.home.intro.link_text }} →
         </a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="site-footer">
-    <div class="section-container footer-grid">
-      <div>
-        <p class="footer-name">Taylor Azizeh</p>
-        <p>Marine ecologist and quantitative researcher</p>
+  <section class="section research-section">
+    <div class="section-container">
+      <div class="section-heading">
+        <div>
+          <p class="section-label">Featured research</p>
+          <h2>Current research areas</h2>
+        </div>
+
+        <a class="text-link" href="/research/">
+          View all research →
+        </a>
       </div>
 
-      <div class="footer-links">
-        <a href="/research/">Research</a>
-        <a href="/publications/">Publications</a>
-        <a href="/photography/">Photography</a>
-        <a href="/admin/">Edit website</a>
+      <div class="card-grid">
+        {{ $researchPages := where site.RegularPages "Section" "research" }}
+
+        {{ range first 2 ($researchPages.ByTitle) }}
+          <article class="research-card">
+            {{ $page := . }}
+
+            {{ with .Params.image }}
+              <a href="{{ $page.RelPermalink }}">
+                <img
+                  class="research-page-image"
+                  src="{{ . }}"
+                  alt="{{ $page.Title }}"
+                >
+              </a>
+            {{ end }}
+
+            <div class="card-content">
+              <p class="card-category">Research</p>
+
+              <h3>
+                {{ .Title }}
+              </h3>
+
+              {{ with .Params.description }}
+                <p>
+                  {{ . }}
+                </p>
+              {{ end }}
+
+              <a class="card-link" href="{{ .RelPermalink }}">
+                Explore research →
+              </a>
+            </div>
+          </article>
+        {{ else }}
+          <p>No research projects have been added yet.</p>
+        {{ end }}
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script src="/js/site.js"></script>
-</body>
-</html>
+  <section class="section publication-section">
+    <div class="section-container publication-grid">
+      <div>
+        <p class="section-label">Selected publication</p>
+        <h2>Recent work</h2>
+      </div>
+
+      {{ $publications := where site.RegularPages "Section" "publications" }}
+      {{ $featured := where $publications ".Params.featured" true }}
+
+      {{ range first 1 (sort $featured ".Params.year" "desc") }}
+        <article class="publication-card">
+          <p class="publication-year">
+            {{ .Params.year }}
+          </p>
+
+          <h3>
+            {{ .Title }}
+          </h3>
+
+          <p class="publication-authors">
+            {{ .Params.authors }}
+          </p>
+
+          <p class="publication-journal">
+            {{ .Params.journal }}
+
+            {{ with .Params.volume }}
+              , {{ . }}
+            {{ end }}
+
+            {{ with .Params.pages }}
+              , {{ . }}
+            {{ end }}
+          </p>
+
+          <a class="text-link" href="/publications/">
+            View publications →
+          </a>
+        </article>
+      {{ else }}
+        <article class="publication-card">
+          <p>No featured publication has been selected.</p>
+
+          <a class="text-link" href="/publications/">
+            View publications →
+          </a>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="section contact-section">
+    <div class="section-container contact-box">
+      <div>
+        <p class="section-label">
+          {{ hugo.Data.home.contact.label }}
+        </p>
+
+        <h2>
+          {{ hugo.Data.home.contact.heading }}
+        </h2>
+      </div>
+
+      <a
+        class="button button-primary"
+        href="{{ hugo.Data.home.contact.button_link }}"
+      >
+        {{ hugo.Data.home.contact.button_text }}
+      </a>
+    </div>
+  </section>
+{{ end }}
