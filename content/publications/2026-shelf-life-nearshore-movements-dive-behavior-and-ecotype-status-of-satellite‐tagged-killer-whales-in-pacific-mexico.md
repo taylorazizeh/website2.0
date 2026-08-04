@@ -2,9 +2,10 @@
 content_type: publication
 title: "Shelf Life: Nearshore Movements, Dive Behavior, and Ecotype Status of
   Satellite‐Tagged Killer Whales in Pacific Mexico"
+title_size: medium
 authors: Joshua D. Stewart, Robert L. Pitman, Pamela Martínez-Loustalot, Nicola
-  Ransome, Taylor R. Azizeh, Hiram Rosales Nanduca, Iliana Fonseca, Aldo Alfonso
-  Zavala Jiménez, Jorge Urbán R.
+  Ransome, **Taylor R. Azizeh**, Hiram Rosales Nanduca, Iliana Fonseca, Aldo
+  Alfonso Zavala Jiménez, Jorge Urbán R.
 journal: Marine Mammal Science
 year: 2026
 publication_date: 2026-02-09
