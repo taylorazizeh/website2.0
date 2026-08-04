@@ -48,16 +48,82 @@ collections:
               - { label: "Button text", name: "button_text", widget: "string" }
               - { label: "Button link", name: "button_link", widget: "string" }
 
+      - name: "about"
+        label: "About Page"
+        file: "content/about.md"
+        fields:
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "Page description", name: "description", widget: "text" }
+          - { label: "Page content", name: "body", widget: "markdown" }
+
+      - name: "contact"
+        label: "Contact Page"
+        file: "content/contact.md"
+        fields:
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "Page description", name: "description", widget: "text" }
+          - { label: "Page content", name: "body", widget: "markdown" }
+
+      - name: "photography"
+        label: "Photography Page"
+        file: "content/photography.md"
+        fields:
+          - { label: "Page title", name: "title", widget: "string" }
+          - { label: "Page description", name: "description", widget: "text" }
+          - { label: "Page content", name: "body", widget: "markdown" }
+
+  - name: "research"
+    label: "Research Projects"
+    label_singular: "Research Project"
+    folder: "content/research"
+    create: true
+    delete: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    filter:
+      field: "title"
+      value: "Research"
+      complement: true
+
+    fields:
+      - label: "Project title"
+        name: "title"
+        widget: "string"
+
+      - label: "Short description"
+        name: "description"
+        widget: "text"
+
+      - label: "Featured image"
+        name: "image"
+        widget: "image"
+        required: false
+
+      - label: "Project content"
+        name: "body"
+        widget: "markdown"
+
+      - label: "Draft"
+        name: "draft"
+        widget: "boolean"
+        default: false
+
   - name: "publications"
     label: "Publications"
     label_singular: "Publication"
     folder: "content/publications"
     create: true
     delete: true
-    slug: "{{year}}-{{slug}}"
     extension: "md"
     format: "frontmatter"
+    slug: "{{year}}-{{slug}}"
     summary: "{{year}} — {{title}}"
+    filter:
+      field: "title"
+      value: "Publications"
+      complement: true
 
     fields:
       - label: "Title"
@@ -76,6 +142,8 @@ collections:
         name: "year"
         widget: "number"
         value_type: "int"
+        min: 1900
+        max: 2100
 
       - label: "Volume"
         name: "volume"
