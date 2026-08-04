@@ -8,6 +8,12 @@
       <div class="page-intro">
         <p class="section-label">Research outputs</p>
         <h1>Publications</h1>
+
+        {{ with .Content }}
+          <div class="content-page-body">
+            {{ . }}
+          </div>
+        {{ end }}
       </div>
 
       <div class="publications-list">
@@ -17,10 +23,20 @@
               {{ .Params.year }}
             </p>
 
-            <div>
-              <h2>
-                {{ .Title }}
-              </h2>
+            <div class="publication-entry-content">
+              {{ with .Params.featured_image }}
+                <img
+                  class="
+                    publication-featured-image
+                    publication-image-size-{{ $.Params.featured_image_size | default "large" }}
+                    publication-image-align-{{ $.Params.featured_image_alignment | default "center" }}
+                  "
+                  src="{{ . }}"
+                  alt="{{ $.Title }}"
+                >
+              {{ end }}
+
+              <h2>{{ .Title }}</h2>
 
               <p class="publication-authors">
                 {{ .Params.authors }}
@@ -33,6 +49,10 @@
                   , {{ . }}
                 {{ end }}
 
+                {{ with .Params.issue }}
+                  ({{ . }})
+                {{ end }}
+
                 {{ with .Params.pages }}
                   , {{ . }}
                 {{ end }}
@@ -41,6 +61,29 @@
               {{ with .Content }}
                 <div class="publication-summary">
                   {{ . }}
+                </div>
+              {{ end }}
+
+              {{ with .Params.figures }}
+                <div class="publication-figures">
+                  {{ range . }}
+                    <figure
+                      class="
+                        publication-figure
+                        publication-image-size-{{ .size | default "medium" }}
+                        publication-image-align-{{ .alignment | default "center" }}
+                      "
+                    >
+                      <img
+                        src="{{ .image }}"
+                        alt="{{ .alt | default "Publication figure" }}"
+                      >
+
+                      {{ with .caption }}
+                        <figcaption>{{ . }}</figcaption>
+                      {{ end }}
+                    </figure>
+                  {{ end }}
                 </div>
               {{ end }}
 

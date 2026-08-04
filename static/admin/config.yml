@@ -483,13 +483,18 @@ collections:
     format: "frontmatter"
     slug: "{{year}}-{{slug}}"
     summary: "{{year}} — {{title}}"
+
     filter:
-      field: "title"
-      value: "Publications"
-      complement: true
+      field: "content_type"
+      value: "publication"
 
     fields:
-      - label: "Title"
+      - label: "Content type"
+        name: "content_type"
+        widget: "hidden"
+        default: "publication"
+
+      - label: "Publication title"
         name: "title"
         widget: "string"
 
@@ -508,22 +513,27 @@ collections:
         min: 1900
         max: 2100
 
-      - label: "Volume"
-        name: "volume"
-        widget: "string"
-        required: false
-
-      - label: "Pages"
-        name: "pages"
-        widget: "string"
-        required: false
-
       - label: "Publication date"
         name: "publication_date"
         widget: "datetime"
         format: "YYYY-MM-DD"
         date_format: "YYYY-MM-DD"
         time_format: false
+        required: false
+
+      - label: "Volume"
+        name: "volume"
+        widget: "string"
+        required: false
+
+      - label: "Issue"
+        name: "issue"
+        widget: "string"
+        required: false
+
+      - label: "Pages"
+        name: "pages"
+        widget: "string"
         required: false
 
       - label: "DOI or publication URL"
@@ -535,6 +545,69 @@ collections:
         name: "pdf"
         widget: "file"
         required: false
+
+      - label: "Featured image"
+        name: "featured_image"
+        widget: "image"
+        required: false
+
+      - label: "Featured image size"
+        name: "featured_image_size"
+        widget: "select"
+        options:
+          - { label: "Small", value: "small" }
+          - { label: "Medium", value: "medium" }
+          - { label: "Large", value: "large" }
+          - { label: "Full width", value: "full" }
+        default: "large"
+
+      - label: "Featured image alignment"
+        name: "featured_image_alignment"
+        widget: "select"
+        options:
+          - { label: "Left", value: "left" }
+          - { label: "Center", value: "center" }
+          - { label: "Right", value: "right" }
+        default: "center"
+
+      - label: "Additional figures"
+        name: "figures"
+        widget: "list"
+        required: false
+        summary: "{{fields.caption}}"
+        fields:
+          - label: "Figure"
+            name: "image"
+            widget: "image"
+
+          - label: "Figure size"
+            name: "size"
+            widget: "select"
+            options:
+              - { label: "Small", value: "small" }
+              - { label: "Medium", value: "medium" }
+              - { label: "Large", value: "large" }
+              - { label: "Full width", value: "full" }
+            default: "medium"
+
+          - label: "Figure alignment"
+            name: "alignment"
+            widget: "select"
+            options:
+              - { label: "Left", value: "left" }
+              - { label: "Center", value: "center" }
+              - { label: "Right", value: "right" }
+            default: "center"
+
+          - label: "Caption"
+            name: "caption"
+            widget: "text"
+            required: false
+
+          - label: "Alt text"
+            name: "alt"
+            widget: "string"
+            required: false
 
       - label: "Show on homepage"
         name: "featured"
@@ -550,3 +623,4 @@ collections:
         name: "draft"
         widget: "boolean"
         default: false
+
